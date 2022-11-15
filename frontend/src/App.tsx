@@ -1,12 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import { Box, styled, Typography } from "@mui/material";
+import useTheme from "@mui/system/useTheme";
+import NotificationButton from "./components/NotificationButton";
 
 function App() {
-  return(
-    <h1>
-      Hello World!!!
-    </h1>
-  )
+  const theme = useTheme();
+  return (
+    <Container>
+      <Typography color={theme.palette.primary.main}>Hello World!!!</Typography>
+      <NotificationButton />
+    </Container>
+  );
 }
 
-export default App
+const Container = styled(Box)(({ theme }) => ({
+  background: theme.palette.background.default,
+}));
+
+export default App;
